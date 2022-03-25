@@ -25,18 +25,21 @@ tomato.name = "tomato";
 tomato.isFruit = true;
 tomato.inStock = true;
 tomato.quantity = 100;
+tomato.price = 5;
 
 potato.id = 2;
 potato.name = "potato";
 potato.isFruit = false;
 potato.inStock = true;
 potato.quantity = 100;
+potato.price = 2;
 
 egg.id = 3;
 egg.name = "eggs";
 egg.isFruit = false;
 egg.inStock = true;
 egg.quantity = 100;
+egg.price = 5;
 
 var inventory = () =>{
     console.log("There are currently eggs, tomatoes, and potatoes in stock.")

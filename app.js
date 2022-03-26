@@ -44,7 +44,7 @@ egg.id = 3;
 egg.name = "eggs";
 egg.isFruit = false;
 egg.inStock = true;
-egg.quantity = 100;
+egg.quantity = 5;
 egg.price = 5;
 
 //defining and setting cart values
@@ -62,7 +62,11 @@ var inventory = () =>{
 
 //checks quantity of item (object) and outputs it.
 var checkQuantity = (n) => {
-    console.log("There are " + n.quantity + " " + n.name + " in stock.")
+    // console.log("There are " + n.quantity + " " + n.name + " in stock.")
+    if (n.quantity == 0){
+        n.inStock = false;
+        console.log(n.name + " are sold out");
+    }
 }
 
 //an item is sold, and the quantity is subtracted.
@@ -74,11 +78,13 @@ var itemSold = (n) => {
     cart.totalPrice = cart.totalPrice + n.price;
     updateCart();
     console.log("There are " + n.quantity + " " + n.name + " in stock.")
-    quantity1.innerHTML = potato.quantity + " left";
-    quantity2.innerHTML = tomato.quantity + " left";
-    quantity3.innerHTML = egg.quantity + " left";
+    quantity1.innerHTML = potato.quantity + " in stock";
+    quantity2.innerHTML = tomato.quantity + " in stock";
+    quantity3.innerHTML = egg.quantity + " in stock";
+    checkQuantity(n)
 }
 
+//updates cart function, displays total price and number of items in cart
 var updateCart = () =>{
     console.log("Number of items in cart: " + cart.countItems)
     console.log("Price of all items in cart: " + cart.totalPrice)
@@ -96,6 +102,6 @@ price2.innerHTML = tomato.price + " kr";
 price3.innerHTML = egg.price + " kr";
 
 //displays number of items left in html
-quantity1.innerHTML = potato.quantity + " left";
-quantity2.innerHTML = tomato.quantity + " left";
-quantity3.innerHTML = egg.quantity + " left";
+quantity1.innerHTML = potato.quantity + " in stock";
+quantity2.innerHTML = tomato.quantity + " in stock";
+quantity3.innerHTML = egg.quantity + " in stock";

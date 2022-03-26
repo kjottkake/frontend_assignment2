@@ -21,8 +21,6 @@ const item = [{
 const tomato = new Object();
 const potato = new Object();
 const egg = new Object();
-const butter = new Object();
-const bread = new Object();
 
 tomato.id = 1;
 tomato.name = "tomato";

@@ -68,6 +68,9 @@ var checkQuantity = (n) => {
 var itemSold = (n) => {
     n.quantity = n.quantity - 1;
     console.log("There are " + n.quantity + " " + n.name + " in stock.")
+    quantity1.innerHTML = potato.quantity + " left";
+    quantity2.innerHTML = tomato.quantity + " left";
+    quantity3.innerHTML = egg.quantity + " left";
 }
 
 item1.innerHTML = potato.name;
@@ -77,3 +80,7 @@ item3.innerHTML = egg.name;
 price1.innerHTML = potato.price + " kr";
 price2.innerHTML = tomato.price + " kr";
 price3.innerHTML = egg.price + " kr";
+
+quantity1.innerHTML = potato.quantity + " left";
+quantity2.innerHTML = tomato.quantity + " left";
+quantity3.innerHTML = egg.quantity + " left";

@@ -1,3 +1,7 @@
+let item1 = document.getElementById("item1")
+let item2 = document.getElementById("item2")
+let item3 = document.getElementById("item3")
+
 const item = [{
     id: 1,name: "milk",price: 29, quantity: 1, unit: "ltr"
 }, {
@@ -59,3 +63,7 @@ var itemSold = (n) => {
     n.quantity = n.quantity - 1;
     console.log("There are " + n.quantity + " " + n.name + " in stock.")
 }
+
+item1.innerHTML = "new text!";
+item2.innerHTML = "new text!";
+item3.innerHTML = "new text!";

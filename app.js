@@ -10,7 +10,7 @@ let quantity1 = document.querySelector("#quantity1")
 let quantity2 = document.querySelector("#quantity2")
 let quantity3 = document.querySelector("#quantity3")
 
-// let itemsInCart = document.getElementById()
+let itemsInCart = document.querySelector("#cartItems");
 
 const item = [{
     id: 1,name: "milk",price: 29, quantity: 1, unit: "ltr"
@@ -58,9 +58,9 @@ let cart = {
     totalPrice : 0
 }
 
-let updateCart = () => {
-
-}
+// let updateCart = () => {
+//     itemsInCart.innerHTML = cart.countItems + " items in cart";
+// }
 
 var inventory = () =>{
     console.log("There are currently eggs, tomatoes, and potatoes in stock.")
@@ -81,7 +81,7 @@ var itemSold = (n) => {
     //adds price of item into cart.
     cart.countItems = cart.countItems + 1;
     cart.totalPrice = cart.totalPrice + n.price;
-
+    checkCart();
     console.log("There are " + n.quantity + " " + n.name + " in stock.")
     quantity1.innerHTML = potato.quantity + " left";
     quantity2.innerHTML = tomato.quantity + " left";
@@ -91,6 +91,7 @@ var itemSold = (n) => {
 var checkCart = () =>{
     console.log("Number of items in cart: " + cart.countItems)
     console.log("Price of all items in cart: " + cart.totalPrice)
+    itemsInCart.innerHTML = "Number of items in cart: " + cart.countItems;
 }
 
 item1.innerHTML = potato.name;

@@ -2,6 +2,14 @@ let item1 = document.getElementById("item1")
 let item2 = document.getElementById("item2")
 let item3 = document.getElementById("item3")
 
+let price1 = document.getElementById("price1")
+let price2 = document.getElementById("price2")
+let price3 = document.getElementById("price3")
+
+let quantity1 = document.getElementById("quantity1")
+let quantity2 = document.getElementById("quantity2")
+let quantity3 = document.getElementById("quantity3")
+
 const item = [{
     id: 1,name: "milk",price: 29, quantity: 1, unit: "ltr"
 }, {
@@ -62,6 +70,10 @@ var itemSold = (n) => {
     console.log("There are " + n.quantity + " " + n.name + " in stock.")
 }
 
-item1.innerHTML = "new text!";
-item2.innerHTML = "new text!";
-item3.innerHTML = "new text!";
+item1.innerHTML = potato.name;
+item2.innerHTML = tomato.name;
+item3.innerHTML = egg.name;
+
+price1.innerHTML = potato.price + " kr";
+price2.innerHTML = tomato.price + " kr";
+price3.innerHTML = egg.price + " kr";

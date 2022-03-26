@@ -15,24 +15,8 @@ let quantity3 = document.querySelector("#quantity3")
 
 //selects item in cart using query selector
 let itemsInCart = document.querySelector("#cartItems");
-//selecst price in cart
+//selects price in cart
 let price = document.querySelector("#totalPrice");
-
-// const item = [{
-//     id: 1,name: "milk",price: 29, quantity: 1, unit: "ltr"
-// }, {
-//     id: 2,name: "eggs", price: 100, quantity: 12, unit: "amount"
-// }, {
-//     id: 3,name: "butter", price: 45,  quantity: 200, unit: "gram"
-// }, {
-//     id: 4,name: "bread", price: 45,  quantity: 1, unit: "amount"
-// },{
-//     id: 5,name: "sausage", price: 45,  quantity: 400, unit: "gram"
-// },{
-//     id: 6,name: "ground-beef", price: 45,  quantity: 400, unit: "gram"
-// },{
-//     id: 7,name: "ground-pork", price: 45,  quantity: 400, unit: "gram"
-// }]
 
 //declaring objects
 const tomato = new Object();
@@ -68,10 +52,6 @@ let cart = {
     countItems : 0,
     totalPrice : 0
 }
-
-// let updateCart = () => {
-//     itemsInCart.innerHTML = cart.countItems + " items in cart";
-// }
 
 var inventory = () =>{
     console.log("There are currently eggs, tomatoes, and potatoes in stock.")

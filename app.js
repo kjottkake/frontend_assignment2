@@ -15,6 +15,8 @@ let quantity3 = document.querySelector("#quantity3")
 
 //selects item in cart using query selector
 let itemsInCart = document.querySelector("#cartItems");
+//selecst price in cart
+let price = document.querySelector("#totalPrice");
 
 // const item = [{
 //     id: 1,name: "milk",price: 29, quantity: 1, unit: "ltr"
@@ -90,17 +92,18 @@ var itemSold = (n) => {
     //adds price of item into cart.
     cart.countItems = cart.countItems + 1;
     cart.totalPrice = cart.totalPrice + n.price;
-    checkCart();
+    updateCart();
     console.log("There are " + n.quantity + " " + n.name + " in stock.")
     quantity1.innerHTML = potato.quantity + " left";
     quantity2.innerHTML = tomato.quantity + " left";
     quantity3.innerHTML = egg.quantity + " left";
 }
 
-var checkCart = () =>{
+var updateCart = () =>{
     console.log("Number of items in cart: " + cart.countItems)
     console.log("Price of all items in cart: " + cart.totalPrice)
     itemsInCart.innerHTML = "Number of items in cart: " + cart.countItems;
+    price.innerHTML = "Total: " + cart.totalPrice + ",- kr";
 }
 
 //display of item in html

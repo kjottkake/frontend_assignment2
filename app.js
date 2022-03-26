@@ -1,14 +1,16 @@
-let item1 = document.getElementById("item1")
-let item2 = document.getElementById("item2")
-let item3 = document.getElementById("item3")
+let item1 = document.querySelector("#item1")
+let item2 = document.querySelector("#item2")
+let item3 = document.querySelector("#item3")
 
-let price1 = document.getElementById("price1")
-let price2 = document.getElementById("price2")
-let price3 = document.getElementById("price3")
+let price1 = document.querySelector("#price1")
+let price2 = document.querySelector("#price2")
+let price3 = document.querySelector("#price3")
 
-let quantity1 = document.getElementById("quantity1")
-let quantity2 = document.getElementById("quantity2")
-let quantity3 = document.getElementById("quantity3")
+let quantity1 = document.querySelector("#quantity1")
+let quantity2 = document.querySelector("#quantity2")
+let quantity3 = document.querySelector("#quantity3")
+
+// let itemsInCart = document.getElementById()
 
 const item = [{
     id: 1,name: "milk",price: 29, quantity: 1, unit: "ltr"
@@ -51,12 +53,20 @@ egg.inStock = true;
 egg.quantity = 100;
 egg.price = 5;
 
+let cart = {
+    countItems : 0,
+    totalPrice : 0
+}
+
+let updateCart = () => {
+
+}
+
 var inventory = () =>{
     console.log("There are currently eggs, tomatoes, and potatoes in stock.")
     console.log("Number of " + egg.name + " " + egg.quantity);
     console.log("Number of " + potato.name + " " + potato.quantity);
     console.log("Number of " + tomato.name + " " + tomato.quantity);
-
 }
 
 //checks quantity of item (object) and outputs it.
@@ -66,11 +76,21 @@ var checkQuantity = (n) => {
 
 //an item is sold, and the quantity is subtracted.
 var itemSold = (n) => {
+    //quantity of item is subtracted by 1.
     n.quantity = n.quantity - 1;
+    //adds price of item into cart.
+    cart.countItems = cart.countItems + 1;
+    cart.totalPrice = cart.totalPrice + n.price;
+
     console.log("There are " + n.quantity + " " + n.name + " in stock.")
     quantity1.innerHTML = potato.quantity + " left";
     quantity2.innerHTML = tomato.quantity + " left";
     quantity3.innerHTML = egg.quantity + " left";
+}
+
+var checkCart = () =>{
+    console.log("Number of items in cart: " + cart.countItems)
+    console.log("Price of all items in cart: " + cart.totalPrice)
 }
 
 item1.innerHTML = potato.name;

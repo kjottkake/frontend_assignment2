@@ -18,10 +18,18 @@ let itemsInCart = document.querySelector("#cartItems");
 //selects price in cart
 let price = document.querySelector("#totalPrice");
 
-//declaring objects
-const tomato = new Object();
-const potato = new Object();
-const egg = new Object();
+
+//Creating the template for the objects that are Items in the store.
+let Item = (id, name, isFruit, inStock, quantity, price) =>{
+    this.id = id;
+    this.name = name;
+    this.isFruit = isFruit;
+    this.inStock = inStock;
+    this.quantity = quantity;
+    this.price = price;
+}
+
+
 
 //defining tomato object values
 tomato.id = 1;

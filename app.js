@@ -29,31 +29,39 @@ let Item = (id, name, isFruit, inStock, quantity, price) =>{
     this.price = price;
 }
 
+let tomato = new Item(1, "tomato", true, true, 100, 5)
+let potato = new Item(2, "potato", false, true, 100, 5)
+let egg = new Item(3, "eggs", false, true, 12, 5)
+// //declaring objects
+// const tomato = new Object();
+// const potato = new Object();
+// const egg = new Object();
+
+// //defining tomato object values
+// tomato.id = 1;
+// tomato.name = "tomato";
+// tomato.isFruit = true;
+// tomato.inStock = true;
+// tomato.quantity = 100;
+// tomato.price = 5;
+
+// //defining potato object values
+// potato.id = 2;
+// potato.name = "potato";
+// potato.isFruit = false;
+// potato.inStock = true;
+// potato.quantity = 100;
+// potato.price = 2;
+
+// //defining egg object values
+// egg.id = 3;
+// egg.name = "eggs";
+// egg.isFruit = false;
+// egg.inStock = true;
+// egg.quantity = 5;
+// egg.price = 5;
 
 
-//defining tomato object values
-tomato.id = 1;
-tomato.name = "tomato";
-tomato.isFruit = true;
-tomato.inStock = true;
-tomato.quantity = 100;
-tomato.price = 5;
-
-//defining potato object values
-potato.id = 2;
-potato.name = "potato";
-potato.isFruit = false;
-potato.inStock = true;
-potato.quantity = 100;
-potato.price = 2;
-
-//defining egg object values
-egg.id = 3;
-egg.name = "eggs";
-egg.isFruit = false;
-egg.inStock = true;
-egg.quantity = 5;
-egg.price = 5;
 
 //defining and setting cart values
 let cart = {

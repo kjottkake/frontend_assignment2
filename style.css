@@ -7,10 +7,17 @@
 img {
     width: 250px;
 }
-
+.cart {
+    padding: 12px;
+    font-weight: bold;
+}
 .item {
     background-color: palegoldenrod;
     padding: 25px;
-    float: left; 
+    text-align: center;
+}
+
+footer {
+    padding: 12px;
     text-align: center;
 }

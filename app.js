@@ -1,14 +1,14 @@
-//selects items using query selector
+//selects items of html document using query selector
 let item1 = document.querySelector("#item1")
 let item2 = document.querySelector("#item2")
 let item3 = document.querySelector("#item3")
 
-//selects prices using query selector
+//selects prices of html document using query selector
 let price1 = document.querySelector("#price1")
 let price2 = document.querySelector("#price2")
 let price3 = document.querySelector("#price3")
 
-//selects quantity using query selector
+//selects quantity of html document using query selector
 let quantity1 = document.querySelector("#quantity1")
 let quantity2 = document.querySelector("#quantity2")
 let quantity3 = document.querySelector("#quantity3")
@@ -27,42 +27,22 @@ function Item(id, name, isFruit, inStock, quantity, price){
     this.inStock = inStock;
     this.quantity = quantity;
     this.price = price;
+    //function to display number of eggs in stock.
+    this.displayInventory = function() {
+       console.log("Number of " + this.name + " " + this.quantity);
+    }
 }
 
-let tomato = new Item(1, "tomato", true, true, 100, 5);
-let potato = new Item(2, "potato", false, true, 100, 5);
-let egg = new Item(3, "eggs", false, true, 12, 5);
-
-// //declaring objects
-// const tomato = new Object();
-// const potato = new Object();
-// const egg = new Object();
-
-// //defining tomato object values
-// tomato.id = 1;
-// tomato.name = "tomato";
-// tomato.isFruit = true;
-// tomato.inStock = true;
-// tomato.quantity = 100;
-// tomato.price = 5;
-
-// //defining potato object values
-// potato.id = 2;
-// potato.name = "potato";
-// potato.isFruit = false;
-// potato.inStock = true;
-// potato.quantity = 100;
-// potato.price = 2;
-
-// //defining egg object values
-// egg.id = 3;
-// egg.name = "eggs";
-// egg.isFruit = false;
-// egg.inStock = true;
-// egg.quantity = 5;
-// egg.price = 5;
+//function which generates a random number somwhere between min and max values. this will be used to generate prices (totally what rema1000 uses as well ;)
+let priceOfDay = (min, max) => {
+    return Math.floor(Math.random() * (max - min)) + min;
+} 
 
 
+//creating objects from template
+let tomato = new Item(1, "tomato", true, true, 100, priceOfDay(5, 7));
+let potato = new Item(2, "potato", false, true, 100, priceOfDay(1, 5));
+let egg = new Item(3, "eggs", false, true, 12, priceOfDay(1, 100));
 
 //defining and setting cart values
 let cart = {
@@ -70,6 +50,7 @@ let cart = {
     totalPrice : 0
 }
 
+//test function which logs an inventory count of all items.
 var inventory = () =>{
     console.log("There are currently eggs, tomatoes, and potatoes in stock.")
     console.log("Number of " + egg.name + " " + egg.quantity);
@@ -78,34 +59,37 @@ var inventory = () =>{
 }
 
 //checks quantity of item (object) and outputs it.
-var checkQuantity = (n) => {
-    // console.log("There are " + n.quantity + " " + n.name + " in stock.")
+let checkQuantity = (n) => {
     if (n.quantity == 0){
         n.inStock = false;
         console.log(n.name + " are sold out");
+        //window object method alerts user that the item is now sold out. 
+        alert(n.name+ " are sold out!");
     }
 }
 
 //an item is sold, and the quantity is subtracted.
-var itemSold = (n) => {
+let itemSold = (n) => {
     //quantity of item is subtracted by 1.
     n.quantity = n.quantity - 1;
     //adds price of item into cart.
     cart.countItems = cart.countItems + 1;
     cart.totalPrice = cart.totalPrice + n.price;
+    //calls on updateCart function and updates the html of the instock items
     updateCart();
     console.log("There are " + n.quantity + " " + n.name + " in stock.")
     quantity1.innerHTML = potato.quantity + " in stock";
     quantity2.innerHTML = tomato.quantity + " in stock";
     quantity3.innerHTML = egg.quantity + " in stock";
+    //calls on the checkQuantity function which checks to see if the item is sold out.
     checkQuantity(n)
 }
 
 //updates cart function, displays total price and number of items in cart
-var updateCart = () =>{
-    console.log("Number of items in cart: " + cart.countItems)
+let updateCart = () =>{
+    console.log("Items in cart: " + cart.countItems)
     console.log("Price of all items in cart: " + cart.totalPrice)
-    itemsInCart.innerHTML = "Number of items in cart: " + cart.countItems;
+    itemsInCart.innerHTML = cart.countItems + " Items in cart";
     price.innerHTML = "Total: " + cart.totalPrice + ",- kr";
 }
 
@@ -122,3 +106,7 @@ price3.innerHTML = egg.price + " kr";
 quantity1.innerHTML = potato.quantity + " in stock";
 quantity2.innerHTML = tomato.quantity + " in stock";
 quantity3.innerHTML = egg.quantity + " in stock";
+
+//this is the implementing the buildin method of document.lastModified, to see when the document was modified last. 
+let lastMod = document.lastModified;
+document.getElementById("mod").innerHTML = lastMod;

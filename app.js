@@ -20,7 +20,7 @@ let price = document.querySelector("#totalPrice");
 
 
 //Creating the template for the objects that are Items in the store.
-let Item = (id, name, isFruit, inStock, quantity, price) =>{
+function Item(id, name, isFruit, inStock, quantity, price){
     this.id = id;
     this.name = name;
     this.isFruit = isFruit;
@@ -29,9 +29,10 @@ let Item = (id, name, isFruit, inStock, quantity, price) =>{
     this.price = price;
 }
 
-let tomato = new Item(1, "tomato", true, true, 100, 5)
-let potato = new Item(2, "potato", false, true, 100, 5)
-let egg = new Item(3, "eggs", false, true, 12, 5)
+let tomato = new Item(1, "tomato", true, true, 100, 5);
+let potato = new Item(2, "potato", false, true, 100, 5);
+let egg = new Item(3, "eggs", false, true, 12, 5);
+
 // //declaring objects
 // const tomato = new Object();
 // const potato = new Object();
